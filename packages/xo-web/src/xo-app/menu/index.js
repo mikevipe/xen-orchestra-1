@@ -328,39 +328,9 @@ export default class Menu extends Component {
           },
         ],
       },
-      {
-        to: isAdmin ? 'xoa/update' : 'xoa/notifications',
-        icon: 'menu-xoa',
-        label: 'xoa',
-        extra: [
-          !isAdmin || xoaState === 'upToDate' ? null : <UpdateTag key='update' />,
-          noNotifications ? null : <NotificationTag key='notification' />,
-        ],
-        subMenu: [
-          isAdmin && {
-            to: 'xoa/update',
-            icon: 'menu-update',
-            label: 'updatePage',
-            extra: <UpdateTag />,
-          },
-          isAdmin && {
-            to: 'xoa/licenses',
-            icon: 'menu-license',
-            label: 'licensesPage',
-          },
-          {
-            to: 'xoa/notifications',
-            icon: 'menu-notification',
-            label: 'notificationsPage',
-            extra: <NotificationTag />,
-          },
-          isAdmin && {
-            to: 'xoa/support',
-            icon: 'menu-support',
-            label: 'supportPage',
-          },
-        ],
-      },
+ 
+      
+      
       isAdmin && {
         to: '/settings/servers',
         icon: 'menu-settings',
