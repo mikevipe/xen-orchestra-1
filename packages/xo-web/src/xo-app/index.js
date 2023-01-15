@@ -330,47 +330,6 @@ export default class XoApp extends Component {
         <ThemeProvider theme={themes.base}>
           <DocumentTitle title='Xen Orchestra'>
             <div>
-              {plan !== 'Community' && registerNeeded && (
-                <div className='alert alert-danger mb-0'>
-                  {_('notRegisteredDisclaimerInfo')}{' '}
-                  <a href='https://xen-orchestra.com/#!/signup' rel='noopener noreferrer' target='_blank'>
-                    {_('notRegisteredDisclaimerCreateAccount')}
-                  </a>{' '}
-                  <Link to='/xoa/update'>{_('notRegisteredDisclaimerRegister')}</Link>
-                </div>
-              )}
-              {plan === 'Community' && !this.state.dismissedSourceBanner && (
-                <div className='alert alert-danger mb-0'>
-                  <a
-                    href='https://xen-orchestra.com/#!/xoa?pk_campaign=xo_source_banner'
-                    rel='noopener noreferrer'
-                    target='_blank'
-                  >
-                    {_('disclaimerText3')}
-                  </a>{' '}
-                  <a
-                    href='https://xen-orchestra.com/docs/installation.html#banner-and-warnings'
-                    rel='noopener noreferrer'
-                    target='_blank'
-                  >
-                    {_('disclaimerText4')}
-                  </a>
-                  <button className='close' onClick={this.dismissSourceBanner}>
-                    &times;
-                  </button>
-                </div>
-              )}
-              {isTrialRunning(trial.trial) && !this.state.dismissedTrialBanner && (
-                <div className='alert alert-info mb-0'>
-                  {_('trialLicenseInfo', {
-                    edition: getXoaPlan(productId2Plan[trial.trial.productId]),
-                    date: new Date(trial.trial.end),
-                  })}
-                  <button className='close' onClick={this.dismissTrialBanner}>
-                    &times;
-                  </button>
-                </div>
-              )}
               <div style={CONTAINER_STYLE}>
                 <Shortcuts
                   name='XoApp'
